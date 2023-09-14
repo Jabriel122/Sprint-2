@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj": {}
+    "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj": {
+    "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj",
+        "projectUniqueName": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj",
         "projectName": "webapi.inlock.dbFirst.manha",
-        "projectPath": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj",
+        "projectPath": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\webapi.inlock.dbFirst.manha\\webapi.inlock.dbFirst.manha.csproj",
         "packagesPath": "C:\\Users\\50849167825\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint 2\\webapi.inlock.dbFirst.manha\\obj\\",
+        "outputPath": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\webapi.inlock.dbFirst.manha\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\50849167825\\AppData\\Roaming\\NuGet\\NuGet.Config",
