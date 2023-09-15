@@ -18,10 +18,10 @@ namespace webapi.inlock.codeFirst.manha.Domain
         public string Email { get; set; }
 
 
-        [Column(TypeName = "VARCHAR(100)")]
+        [Column(TypeName = "VARCHAR(200)")]
         [Required(ErrorMessage = "Senha de Usuario obrigatório")]
-        [StringLength(20,MinimumLength =6, ErrorMessage = "A Senha deve conter de 6 á 20 caracteres")]
-        public string Senha { get; set;  }
+        [StringLength(200, MinimumLength = 6, ErrorMessage = "A Senha deve conter de 6 á 20 caracteres")]
+        public string? Senha { get; set;  }
 
         //Referencia a chave a estrangeira (Tabela de TipoUsuario)
 
@@ -29,7 +29,7 @@ namespace webapi.inlock.codeFirst.manha.Domain
         public Guid IdTipoUsuario { get; set; }
 
         [ForeignKey("IdTipoUsuario")]
-        public TipoUsuario TipoUsuario { get; set; }
+        public TipoUsuario? TipoUsuario { get; set; }
 
 
 

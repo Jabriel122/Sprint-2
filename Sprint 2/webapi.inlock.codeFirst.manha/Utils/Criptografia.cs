@@ -14,7 +14,7 @@
 
 
         /// <summary>
-        /// Verificar se a sash da senha informada é igual a hash salva no banco
+        /// Verificar se a hash da senha informada é igual a hash salva no banco
         /// </summary>
         /// <param name="senhaForm">Senha informada pelo o usuário</param>
         /// <param name="senhaBanco"> Senha cadastrada no banco </param>

@@ -2,6 +2,7 @@
 using webapi.inlock.codeFirst.manha.Domain;
 using webapi.inlock.codeFirst.manha.Interface;
 using webapi.inlock.codeFirst.manha.Utils;
+using webapi.inlock.codeFirst.manha.ViewModels;
 
 namespace webapi.inlock.codeFirst.manha.Repositories
 {
@@ -28,7 +29,27 @@ namespace webapi.inlock.codeFirst.manha.Repositories
 
         public Usuario BuscarUsuario(string email, string senha)
         {
-            throw new NotImplementedException();
+            try
+            {
+               Usuario usuarioBuscado = ctx.Usuario.FirstOrDefault(u => u.Email == email)!;
+
+                if (usuarioBuscado != null) 
+                {
+                    bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
+
+                    if (confere)
+                    {
+                        return usuarioBuscado;
+                    }
+
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void Cadastrar(Usuario usuario)
@@ -48,6 +69,18 @@ namespace webapi.inlock.codeFirst.manha.Repositories
             }
            
             
+        }
+
+        public void Logar(LoginViewModel usuario, string senha)
+        {
+            try
+            {
+                Usuario senhaBuscado = ctx.Usuario.FirstOrDefault(u => u.Senha == senha);
+                usuario.Senha = Criptografia.CompararHash(usuario.Senha, senhaBuscado);
+
+            }
+            
+
         }
     }
 }

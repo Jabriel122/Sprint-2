@@ -1,4 +1,5 @@
 ﻿using webapi.inlock.codeFirst.manha.Domain;
+using webapi.inlock.codeFirst.manha.ViewModels;
 
 namespace webapi.inlock.codeFirst.manha.Interface
 {
@@ -7,6 +8,8 @@ namespace webapi.inlock.codeFirst.manha.Interface
         Usuario BuscarUsuario(String email, string senha);
 
         void Cadastrar(Usuario usuario);
+
+        void Logar (LoginViewModel usuario);
 
     }
 }
