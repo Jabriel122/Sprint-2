@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>apiweb.+event.manha</name>
+    </assembly>
+    <members>
+        <member name="T:apiweb._event.manha.Migrations.Bd_V2">
+            <inheritdoc />
+        </member>
+        <member name="M:apiweb._event.manha.Migrations.Bd_V2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:apiweb._event.manha.Migrations.Bd_V2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:apiweb._event.manha.Migrations.Bd_V2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

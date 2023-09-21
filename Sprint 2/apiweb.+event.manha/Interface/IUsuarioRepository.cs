@@ -1,4 +1,5 @@
 ﻿using apiweb._event.manha.Domains;
+using apiweb._event.manha.ViewModel;
 
 namespace apiweb._event.manha.Interface
 {
@@ -10,6 +11,7 @@ namespace apiweb._event.manha.Interface
 
         Usuario BuscarPorEmailESenha(String email, String senha);
 
-        public void Deletar(Guid id);
+        void Deletar(Guid id);
+
     }
 }

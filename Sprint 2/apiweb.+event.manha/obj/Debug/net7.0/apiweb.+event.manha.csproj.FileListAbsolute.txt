@@ -82,3 +82,5 @@ C:\Users\50849167825\Desktop\Senai\2° Semestre\Sprint-2\Sprint 2\apiweb.+event.
 C:\Users\50849167825\Desktop\Senai\2° Semestre\Sprint-2\Sprint 2\apiweb.+event.manha\obj\Debug\net7.0\apiweb.+event.manha.genruntimeconfig.cache
 C:\Users\50849167825\Desktop\Senai\2° Semestre\Sprint-2\Sprint 2\apiweb.+event.manha\obj\Debug\net7.0\ref\apiweb.+event.manha.dll
 C:\Users\50849167825\Desktop\Senai\2° Semestre\Sprint-2\Sprint 2\apiweb.+event.manha\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\50849167825\Desktop\Senai\2° Semestre\Sprint-2\Sprint 2\apiweb.+event.manha\bin\Debug\net7.0\apiweb.+event.manha.xml
+C:\Users\50849167825\Desktop\Senai\2° Semestre\Sprint-2\Sprint 2\apiweb.+event.manha\obj\Debug\net7.0\apiweb.+event.manha.xml

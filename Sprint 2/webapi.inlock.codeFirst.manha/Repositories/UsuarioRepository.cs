@@ -71,16 +71,27 @@ namespace webapi.inlock.codeFirst.manha.Repositories
             
         }
 
-        public void Logar(LoginViewModel usuario, string senha)
+        public void Logar(LoginViewModel usuario)
         {
             try
             {
-                Usuario senhaBuscado = ctx.Usuario.FirstOrDefault(u => u.Senha == senha);
-                usuario.Senha = Criptografia.CompararHash(usuario.Senha, senhaBuscado);
-
+                Usuario senhaBuscado = ctx.Usuario.FirstOrDefault(u => u.Senha == usuario.Senha);
+                usuario.Senha = Criptografia.CompararHash(usuario, senhaBuscado); 
+            }
+            catch (Exception)
+            {
+                throw;
             }
             
 
+            
+                
         }
+            
+
+            
+            
+
+        
     }
 }

@@ -1,31 +1,30 @@
 ﻿using apiweb._event.manha.Domains;
 using apiweb._event.manha.Interface;
 using apiweb._event.manha.Repositories;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace apiweb._event.manha.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TiposUsuarioController : ControllerBase
+    [Produces("application/json")]
+    public class EventoController : ControllerBase
     {
-        private ITiposUsuariosRepository _tiposUsuarioRepository;
+        private readonly IEventoRepository _eventoRepository;
 
-        public TiposUsuarioController()
+        public EventoController()
         {
-            _tiposUsuarioRepository = new TiposUsuariosRepository();
+            _eventoRepository = new EventoRepository();
         }
 
         [HttpPost]
-        [Authorize(Roles = "administrador")]
-        public IActionResult Post(TiposUsuario tiposUsuario)
+
+        public IActionResult Post(Evento evento)
         {
             try
             {
-                _tiposUsuarioRepository.Cadastrar(tiposUsuario);
+                _eventoRepository.CadastrarEvento(evento);
                 return StatusCode(201);
             }
             catch (Exception ex)

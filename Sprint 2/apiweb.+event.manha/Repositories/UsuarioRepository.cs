@@ -2,6 +2,7 @@
 using apiweb._event.manha.Domains;
 using apiweb._event.manha.Interface;
 using apiweb._event.manha.Utils;
+using apiweb._event.manha.ViewModel;
 using Microsoft.EntityFrameworkCore;
 
 namespace apiweb._event.manha.Repositories
@@ -18,9 +19,21 @@ namespace apiweb._event.manha.Repositories
         {
            try
             {
-                Usuario usuarioBuscado = _eventContext.Usuario.FirstOrDefault(u => u.Email == email);
+                Usuario usuarioBuscado = _eventContext.Usuario
+               .Select(u => new Usuario
+               {
+                   IdUsuario = u.IdUsuario,
+                   Nome = u.Nome,
+                   Email = u.Email,
+                   Senha = u.Senha,
+                   TiposUsuario = new TiposUsuario
+                   {
+                       IdTipoUsuario = u.IdTipoDeUsuario,
+                       Titulo = u.TiposUsuario!.Titulo
+                   }
+               }).FirstOrDefault(u => u.Email == email)!;
 
-                if(usuarioBuscado != null!)
+                if (usuarioBuscado != null!)
                 {
                     bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
 
@@ -46,6 +59,8 @@ namespace apiweb._event.manha.Repositories
                {
                    IdUsuario = u.IdUsuario,
                    Nome = u.Nome,
+                   Email =u.Email,
+                   Senha = u.Senha,
                    TiposUsuario = new TiposUsuario
                    {
                        Titulo = u.TiposUsuario!.Titulo
@@ -68,7 +83,7 @@ namespace apiweb._event.manha.Repositories
         {
             try
             {
-                usuario.Senha = Criptografia.GerarHash(usuario.Senha);
+                usuario.Senha = Criptografia.GerarHash(usuario.Senha!);
 
                 _eventContext.Usuario.Add(usuario);
                 _eventContext.SaveChanges();
@@ -78,10 +93,13 @@ namespace apiweb._event.manha.Repositories
                 throw;
             }
         }
-        9
+        
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Usuario usuarioBuscar = _eventContext.Usuario.Find(id);
+            _eventContext.Usuario.Remove(usuarioBuscar);
+            _eventContext.SaveChanges();
         }
+
     }
 }
