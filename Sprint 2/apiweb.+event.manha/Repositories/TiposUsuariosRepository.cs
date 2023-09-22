@@ -15,12 +15,37 @@ namespace apiweb._event.manha.Repositories
         }
         public void Atualizar(Guid id, TiposUsuario tipoUsuarios)
         {
-            throw new NotImplementedException();
+            TiposUsuario tiposUsuarioBuscar = _eventContext.TiposUsuarios.Find(id)!;
+            if(tiposUsuarioBuscar !=null)
+            {
+                tiposUsuarioBuscar.Titulo = tipoUsuarios.Titulo;
+            }
+            _eventContext.Update(tiposUsuarioBuscar);
+            _eventContext.SaveChanges();
         }
 
         public TiposUsuario BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                TiposUsuario tiposUsuario = _eventContext.TiposUsuarios.Select(u => new TiposUsuario
+                {
+                    IdTipoUsuario = u.IdTipoUsuario,
+                    Titulo = u.Titulo
+                }).FirstOrDefault(u => u.IdTipoUsuario == id)!;
+
+                if (tiposUsuario != null)
+                {
+                    return tiposUsuario;
+                }
+                return null;
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public void Cadastrar(TiposUsuario tiposUsuario)
@@ -31,12 +56,14 @@ namespace apiweb._event.manha.Repositories
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            TiposUsuario tiposUsuarioBuscar = _eventContext.TiposUsuarios.Find(id);
+            _eventContext.TiposUsuarios.Remove(tiposUsuarioBuscar);
+            _eventContext.SaveChanges();
         }
 
         public List<TiposUsuario> Listar()
         {
-            throw new NotImplementedException();
+           return _eventContext.TiposUsuarios.ToList();
         }
     }
 }

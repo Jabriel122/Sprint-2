@@ -9,6 +9,7 @@ namespace apiweb._event.manha.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
 
     public class UsuarioController : ControllerBase
     {

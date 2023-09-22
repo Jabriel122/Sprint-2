@@ -9,5 +9,9 @@ namespace apiweb._event.manha.Interface
         void Deletar(Guid id);
 
         Evento BuscarPorId(Guid id);
+
+        List<Evento> Listar();
+
+        void Atualizar(Guid id, Evento evento);
     }
 }

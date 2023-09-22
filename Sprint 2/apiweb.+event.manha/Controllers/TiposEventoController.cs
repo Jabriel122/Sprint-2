@@ -4,29 +4,30 @@ using apiweb._event.manha.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace apiweb._event.manha.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class TiposUsuarioController : ControllerBase
+    public class TiposEventoController : ControllerBase
     {
-        private ITiposUsuariosRepository _tiposUsuarioRepository;
 
-        public TiposUsuarioController()
+        private ITiposEventoRepository _tiposEventoRepository;
+
+        public TiposEventoController()
         {
-            _tiposUsuarioRepository = new TiposUsuariosRepository();
+            _tiposEventoRepository = new TiposEventoRepository();
         }
 
+
         [HttpPost]
-        [Authorize(Roles = "administrador")]
-        public IActionResult Post(TiposUsuario tiposUsuario)
+        //[Authorize(Roles = "administrador")]
+        public IActionResult Post(TiposEvento tiposEvento)
         {
             try
             {
-                _tiposUsuarioRepository.Cadastrar(tiposUsuario);
+                _tiposEventoRepository.Cadastra(tiposEvento);
                 return StatusCode(201);
             }
             catch (Exception ex)
@@ -41,7 +42,7 @@ namespace apiweb._event.manha.Controllers
         {
             try
             {
-                _tiposUsuarioRepository.Deletar(id);
+                _tiposEventoRepository.Deletar(id);
                 return StatusCode(201);
 
             }

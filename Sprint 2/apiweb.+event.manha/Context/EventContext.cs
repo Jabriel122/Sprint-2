@@ -9,12 +9,14 @@ namespace apiweb._event.manha.Context
 
         public DbSet<Usuario> Usuario { get; set; }
 
-        public DbSet<TiposEvento> TiposEventos { get; set; }
+        public DbSet<TiposEvento> TiposEvento { get; set; }
 
-        public DbSet<ComentariosEventos> ComentComentariosEventos { get; set; }
+        public DbSet<ComentariosEventos> ComentariosEventos { get; set; }
 
         public DbSet<Instituicao> Instituicao { get; set; }
         public DbSet<PresencasEvento> PresencasEvento { get; set; }
+
+        public DbSet<Evento> Evento { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

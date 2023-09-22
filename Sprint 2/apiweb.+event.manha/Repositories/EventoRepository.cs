@@ -14,20 +14,56 @@ namespace apiweb._event.manha.Repositories
             _eventContext = new EventContext();
         }
 
+        public void Atualizar(Guid id, Evento evento)
+        {
+            Evento eventoBuscar = _eventContext.Evento.Find(id);
+            if (eventoBuscar != null) 
+            {
+                eventoBuscar.NomeEvento = evento.NomeEvento!;
+                eventoBuscar.DataEvento = evento.DataEvento!;
+                eventoBuscar.Descricao = evento.Descricao!;
+                eventoBuscar.IdTiposEvento = evento.IdTiposEvento!;
+                eventoBuscar.IdInstituicao = evento.IdInstituicao!;
+            }
+            _eventContext.Update(evento);
+            _eventContext.SaveChanges();
+        }
 
         public Evento BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Evento evento = _eventContext.Evento.Select(u => new Evento
+                {
+                    IdEvento = u.IdEvento,
+                    NomeEvento = u.NomeEvento,
+                    DataEvento = u.DataEvento,
+                    Descricao = u.Descricao,
+                    IdInstituicao = u.IdInstituicao,
+                    IdTiposEvento = u.IdTiposEvento
+
+                }).FirstOrDefault(u => u.IdEvento == id)!;
+
+                if (evento != null)
+                {
+                    return evento;
+                }
+                return null!;
+            }
+            catch
+            {
+                throw;
+            }
+            
+
         }
 
         public void CadastrarEvento(Evento evento)
         {
             try
             {
-                evento.NomeEvento = Criptografia.GerarHash(evento.NomeEvento!);
-
                 _eventContext.Evento.Add(evento);
-                _eventContext.SaveChanges();
+                _eventContext.SaveChanges(); 
             }
             catch (Exception ex)
             {
@@ -37,7 +73,14 @@ namespace apiweb._event.manha.Repositories
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Evento eventoBuscar = _eventContext.Evento.Find(id);
+            _eventContext.Evento.Remove(eventoBuscar);
+            _eventContext.SaveChanges();
+        }
+
+        public List<Evento> Listar()
+        {
+            return _eventContext.Evento.ToList();
         }
     }
 }
