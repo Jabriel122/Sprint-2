@@ -7822,19 +7822,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\50849167825\\.nuget\\packages\\": {}
+    "C:\\Users\\gauberto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\apiweb.+event.manha\\apiweb.+event.manha.csproj",
+      "projectUniqueName": "C:\\Users\\gauberto\\Desktop\\Codigos\\Sprint-2\\Sprint 2\\apiweb.+event.manha\\apiweb.+event.manha.csproj",
       "projectName": "apiweb.+event.manha",
-      "projectPath": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\apiweb.+event.manha\\apiweb.+event.manha.csproj",
-      "packagesPath": "C:\\Users\\50849167825\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\50849167825\\Desktop\\Senai\\2° Semestre\\Sprint-2\\Sprint 2\\apiweb.+event.manha\\obj\\",
+      "projectPath": "C:\\Users\\gauberto\\Desktop\\Codigos\\Sprint-2\\Sprint 2\\apiweb.+event.manha\\apiweb.+event.manha.csproj",
+      "packagesPath": "C:\\Users\\gauberto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gauberto\\Desktop\\Codigos\\Sprint-2\\Sprint 2\\apiweb.+event.manha\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\50849167825\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gauberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7918,7 +7918,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
